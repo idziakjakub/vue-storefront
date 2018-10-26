@@ -42,6 +42,16 @@ export default {
     category () {
       return this.$store.state.category.current
     },
+    parentCategory () {
+      return this.$store.state.category.list.filter((op) => {
+        return op.id === this.category.parent_id
+      })
+    },
+    categories () {
+      return this.$store.state.category.list.filter((op) => {
+        return op.parent_id === this.category.id && this.$store.state.product.list.items.length > 0
+      })
+    },
     categoryName () {
       return this.$store.state.category.current ? this.$store.state.category.current.name : ''
     },

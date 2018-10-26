@@ -23,6 +23,9 @@
     <div class="container pb60">
       <div class="row m0 pt15">
         <div class="col-md-3 start-xs category-filters">
+          <sidebar-categories/>
+        </div>
+        <div class="col-md-3 start-xs category-filters">
           <sidebar :filters="filters.available"/>
         </div>
         <div class="col-md-3 start-xs mobile-filters" v-show="mobileFilters">
@@ -50,10 +53,12 @@ import Sidebar from '../components/core/blocks/Category/Sidebar.vue'
 import ProductListing from '../components/core/ProductListing.vue'
 import Breadcrumbs from '../components/core/Breadcrumbs.vue'
 import SortBy from '../components/core/SortBy.vue'
+import SidebarCategories from '../components/core/blocks/Category/SidebarCategories'
 // import builder from 'bodybuilder'
 
 export default {
   components: {
+    SidebarCategories,
     ProductListing,
     Breadcrumbs,
     Sidebar,
